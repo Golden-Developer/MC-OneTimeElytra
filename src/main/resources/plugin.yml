@@ -1,0 +1,6 @@
+name: MC-OneTimeElytra
+version: '${project.version}'
+main: de.goldendeveloper.onetimeelytra.Main
+api-version: 1.18
+authors: [ _Coho04_ ]
+website: https://coho04.de
