@@ -19,9 +19,11 @@ public class ElyAction implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void noClick(InventoryClickEvent event) {
         try {
-            if (event.getCurrentItem().getItemMeta().getDisplayName().equals(Elytra.ely().getItemMeta().getDisplayName())) {
-                event.setCancelled(true);
-                event.getWhoClicked().sendMessage("§cDu darfst deine Einwegelytra nicht droppen!");
+            if (event.getCurrentItem().getItemMeta().hasDisplayName()) {
+                if (event.getCurrentItem().getItemMeta().getDisplayName().equals(Elytra.ely().getItemMeta().getDisplayName())) {
+                    event.setCancelled(true);
+                    event.getWhoClicked().sendMessage("§cDu darfst deine Einwegelytra nicht droppen!");
+                }
             }
         } catch (NullPointerException e) {
             e.printStackTrace();
